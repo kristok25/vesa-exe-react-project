@@ -20,17 +20,17 @@ type ConfettiPiece = {
 };
 
 const photos: Photo[] = [
-  { src: "/photos/memory-1.jpg", caption: "Njera nga keto momente qe e mbajme ne mend.", date: "A nje dite e mire" },
-  { src: "/photos/memory-2.jpg", caption: "Disa momente te bukura dhe te thjeshta.", date: "Shume miqesi" },
-  { src: "/photos/memory-3.jpg", caption: "Nje moment qe meriton te ruhet.", date: "Nje kthim i vogel" },
-  { src: "/photos/memory-4.jpg", caption: "Nje foto qe me shume ka thjeshtesi dhe cilesi.", date: "Momenti i fundit" },
+  { src: "/photos/memory-1.jpg", caption: "Kjo foto thjesht ben shume sens.", date: "momenti i pare" },
+  { src: "/photos/memory-2.jpg", caption: "Kur jemi ne versionin me te thjeshte.", date: "shume qeshje" },
+  { src: "/photos/memory-3.jpg", caption: "Pak kaos, shume buzqeshje.", date: "little chaos" },
+  { src: "/photos/memory-4.jpg", caption: "Ne, me dritat e ngrohta.", date: "finale" },
 ];
 
 const checks = [
-  "Duke kontrolluar lejet per dite e lindjes...",
-  "Duke lidhur me API te gjerave te mira...",
-  "Duke ngarkuar nje vit te ri me shpresa...",
-  "Duke kompiluar buzqeshje...",
+  "Duke gatuar pak surprize...",
+  "Duke shtuar disa qesharje...",
+  "Duke vendosur dritat e ngrohta...",
+  "Duke bere gati ditelindjen...",
 ];
 
 const confettiColors = ["#f9d976", "#ff8fab", "#90cdf4", "#a78bfa", "#86efac", "#fca5a5"];
@@ -80,7 +80,7 @@ export default function App() {
   const [confettiBurst, setConfettiBurst] = useState<ConfettiPiece[]>([]);
 
   const galleryPhotos = photos.slice(0, 3);
-  const closingPhoto = photos[0];
+  const closingPhoto = photos[photos.length - 1];
 
   const launch = () => {
     setStarted(true);
@@ -104,76 +104,76 @@ export default function App() {
           <span className="brand-mark"><Code2 size={16} /></span>
           <span>vesa<span className="brand-accent">.exe</span></span>
         </a>
-        <div className="topbar-right"><span className="status-dot" /> LANSIM SPECIAL <span className="version">v1.0.0</span></div>
+        <div className="topbar-right"><span className="status-dot" /> simple mode <span className="version">v1.1</span></div>
       </header>
 
       <AnimatePresence mode="wait">
         {!started ? (
           <motion.section key="intro" className="hero" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -20 }}>
-            <div className="eyebrow"><Sparkles size={13} /> DIÇKA E VEÇANTE PER TY</div>
+            <div className="eyebrow"><Sparkles size={13} /> nje surprize e vogel</div>
             <div className="hero-orbit">
               <div className="orbit orbit-a" /><div className="orbit orbit-b" />
               <div className="orbit-core"><Cake size={43} strokeWidth={1.25} /></div>
               <span className="orbit-star star-a">✦</span><span className="orbit-star star-b">✧</span>
             </div>
-            <h1>Hej, Vesa<span className="purple-period">.</span></h1>
-            <p className="hero-subtitle">Ke nje lajm te ri.</p>
+            <h1>Hey, Vesa<span className="purple-period">.</span></h1>
+            <p className="hero-subtitle">Ka nje lajm te mire.</p>
             <div className="terminal-card">
               <div className="terminal-head">
                 <div className="window-dots"><i /><i /><i /></div>
                 <span><Terminal size={12} /> birthday.init</span>
-                <span className="terminal-lock">LOKALE / PRIVATE</span>
+                <span className="terminal-lock">fun mode</span>
               </div>
               <div className="terminal-body">
-                <p><span className="prompt">→</span> Duke inicializuar <b>vesa.exe</b>...</p>
-                <p><span className="prompt">→</span> U zbulua protokolli i dates.</p>
-                <p><span className="prompt">→</span> Duke gati nje surprize te bukur<span className="cursor">_</span></p>
+                <p><span className="prompt">→</span> Duke hapur <b>surprizen</b>...</p>
+                <p><span className="prompt">→</span> U gjet pak dashuri.</p>
+                <p><span className="prompt">→</span> Drite, qeshje dhe nje shaka e mire<span className="cursor">_</span></p>
               </div>
             </div>
             <button className="primary-button" onClick={launch}>
               Hap surprizen <ArrowRight size={17} />
             </button>
-            <p className="microcopy">Asnje bug nuk u lende ne prodhimin e kesaj dite.</p>
-            <div className="scroll-hint"><ArrowDown size={14} /> ROLLO NDERA, QENDRO DISA</div>
+            <p className="microcopy">Pa drama, vetem bukuri dhe qeshje.</p>
+            <div className="scroll-hint"><ArrowDown size={14} /> vazhdo pak</div>
           </motion.section>
         ) : (
           <motion.section key="content" className="content" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
             {!ready ? (
               <div className="loading-panel">
                 <div className="loading-icon"><Terminal size={24} /></div>
-                <p className="eyebrow">JU LUTEM PRITNI</p>
-                <h2>Duke krijuar një pak magji...</h2>
+                <p className="eyebrow">prit pak</p>
+                <h2>Po vendosim disa gjera te mira...</h2>
                 <div className="loading-lines">{checks.map((item, i) => <motion.p key={item} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.35 }}><Check size={13} /> {item}</motion.p>)}</div>
                 <div className="progress-track"><motion.div initial={{ width: "0%" }} animate={{ width: "100%" }} transition={{ duration: 1.6 }} /></div>
               </div>
             ) : (
               <>
                 <section className="birthday-heading">
-                  <div className="eyebrow"><PartyPopper size={14} /> LANSIMI U KRYE ME SUKSES</div>
-                  <h1>Gëzuar ditelindjen,<br /><em>Vesa!</em></h1>
-                  <p className="heading-note">Një udhetim i ri rreth diellit. Një version i ri dhe i bukur per te festuar.</p>
-                  <div className="success-pill"><span /> HTTP 200 · TE GJITHA SISTEMET ME GJEK</div>
+                  <div className="eyebrow"><PartyPopper size={14} /> gëzuar ditelindjen</div>
+                  <h1>Gëzuar,<br /><em>Vesa!</em></h1>
+                  <p className="heading-note">Nuk ka nevoje per gjëra te shtrenjta. Vetem ulet, qesh dhe beje nje xhiro me te mire.</p>
+                  <div className="success-pill"><span /> all systems: funny mode</div>
                 </section>
 
                 <section className="message-card">
                   <div className="message-icon"><Heart size={18} /></div>
-                  <p className="section-kicker">NJË SHËNIM NGA KRIKIMI</p>
-                  <h2>Disa persona e bejne rrugen me te mire.</h2>
+                  <p className="section-kicker">nje mesazh i thjeshte</p>
+                  <h2>Ti je e vecante, por jo e komplikuar.</h2>
                   <p className="message-copy">
-                    Jam shume i lumtur qe rrugët tona u kryqezuan. Nga ditët e punes dhe momentet e vogla te buzqeshjes, me ka qene e bukur te ndjekim keshtu. Edhe pse jeta na ka dhene rrugë te ndryshme, shpresoj qe Vienna te te ndjehet e mira dhe te te sjelle aventura te reja.
+                    Une e dua stilin tend te thjeshte dhe te ngrohte. Ti je ajo qe e bën cdo gjë te duket me e lehte dhe me e bukur. Kemi qesharake, kaos, te mira dhe disa momentet qe na ndajne nga turma.
                   </p>
                   <p className="message-copy">
-                    Të uroj nje vit te plotë me persona te mirë, mundesi te bukura, plane spontane dhe lumturi te cila nuk ka nevojë per debug. Qendro si je. Ti meriton cdo gje te mirë.
+                    Uroj qe viti i ri te jete i mbushur me gëzim, te mira, raste te qeshura dhe pak edhe magji. Ti meriton cdo gjë e ngrohte dhe e teper e bukur.
                   </p>
-                  <div className="signature">Me fat te madh <span>♡</span></div>
+                  <div className="signature">me dashuri <span>♡</span></div>
                 </section>
 
                 <section className="memories-section">
                   <div className="section-heading">
-                    <div><p className="section-kicker">BAZA E MOMENTEVE</p><h2>Disa foto te mira.</h2></div>
-                    <span className="memory-count">03 OBJEKTE</span>
+                    <div><p className="section-kicker">momente</p><h2>Disa foto te hidhura.</h2></div>
+                    <span className="memory-count">03</span>
                   </div>
-                  <p className="section-description">Një koleksion i vogel me momente qe vlen te mbahen mend. Shto fotot e preferuara dhe beje edhe me te personal.</p>
+                  <p className="section-description">Disa foto te vogla me momentet qe e din se si te bejne diten me me te mire.</p>
                   <div className="photo-grid">
                     {galleryPhotos.map((photo, index) => <PhotoCard key={photo.src} photo={photo} index={index} onOpen={() => setActivePhoto(index)} />)}
                   </div>
@@ -184,19 +184,19 @@ export default function App() {
                     <img src={closingPhoto.src} alt={closingPhoto.caption} />
                   </div>
                   <div className="closing-photo-copy">
-                    <p className="section-kicker">PER TE MBETUR</p>
-                    <h2>Një moment i pare, qe do te mbetet gjithmonë.</h2>
-                    <p>Edhe nje here, nje foto e pare qe e mban ne mend cdo moment te ketij dite te vecante.</p>
+                    <p className="section-kicker">finale</p>
+                    <h2>Ne dhe dritat e ngrohta.</h2>
+                    <p>Vetem nje foto e thjeshte, por me te gjitha kuptimet e nje dite te bukur.</p>
                   </div>
                 </section>
 
                 <section className="wish-section">
                   <div className="wish-glow"><Sparkles size={22} /></div>
-                  <p className="section-kicker">GJËJA E FUNDIT</p>
-                  <h2>Bej nje enderr, <em>Vesa.</em></h2>
-                  <p>Le te jete viti i ardhshëm i bute me ty. Le te jene ditet e mira me te shumta se ato te keqija dhe le te sjelle cdo kapitull i ri diçka qe vlen te qeshesh.</p>
+                  <p className="section-kicker">gjëja e fundit</p>
+                  <h2>Bëj një dëshirë, <em>Vesa.</em></h2>
+                  <p>Deshiro nje vit me bukur, me pak stres dhe me shume qeshje. Dhe nese ndodh edhe pak kaos, atehere ne e bejme te ngrohte.</p>
                   <button className={`primary-button wish-button ${wishMade ? "is-done" : ""}`} onClick={triggerWish}>
-                    {wishMade ? <>Endrra u ruajt me sukses <Check size={17} /></> : <>Bera nje enderr <Sparkles size={17} /></>}
+                    {wishMade ? <>Dëshira u ruajt <Check size={17} /></> : <>Bëj një dëshirë <Sparkles size={17} /></>}
                   </button>
 
                   {wishMade && (
@@ -206,9 +206,9 @@ export default function App() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h3>Shume fat, Vesa! ✨</h3>
+                      <h3>Shumë fat, Vesa! ✨</h3>
                       <p>
-                        Uroj qe jeta te japë nje vit te plotë me dashuri, shendet, sukses, gëzim te papare dhe enderrat me te bukura qe ti i deshiron. Ti meriton cdo diell, cdo buzqeshje dhe cdo moment te lumtur qe vjen. Gëzuar ditelindjen dhe vazhdo te shkëlqesh!
+                        Prit nje vit me dashuri, shendet, qeshje, pak magji dhe shume gjera te mira. Ti je e mira dhe e duhur per cdo diell qe vjen.
                       </p>
                     </motion.div>
                   )}
