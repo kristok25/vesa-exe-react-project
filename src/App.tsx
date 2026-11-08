@@ -20,17 +20,17 @@ type ConfettiPiece = {
 };
 
 const photos: Photo[] = [
-  { src: "/photos/memory-1.jpg", caption: "Një për bankën e kujtimeve.", date: "Një ditë e mirë" },
-  { src: "/photos/memory-2.jpg", caption: "Dëshmi që kemi qejf jashtë IDE-së.", date: "Kompani e mirë" },
-  { src: "/photos/memory-3.jpg", caption: "Një moment i çmuar për t'u ruajtur.", date: "Një rikthim i vogël" },
-  { src: "/photos/memory-4.jpg", caption: "Një fotografi për t'u mbajtur mend përgjithmonë.", date: "Momenti i fundit" },
+  { src: "/photos/memory-1.jpg", caption: "Njera nga keto momente qe e mbajme ne mend.", date: "A nje dite e mire" },
+  { src: "/photos/memory-2.jpg", caption: "Disa momente te bukura dhe te thjeshta.", date: "Shume miqesi" },
+  { src: "/photos/memory-3.jpg", caption: "Nje moment qe meriton te ruhet.", date: "Nje kthim i vogel" },
+  { src: "/photos/memory-4.jpg", caption: "Nje foto qe me shume ka thjeshtesi dhe cilesi.", date: "Momenti i fundit" },
 ];
 
 const checks = [
-  "Duke kontrolluar lejet e ditëlindjes...",
-  "Duke lidhur me API-në e gëzimit...",
-  "Duke ngarkuar një vit tjetër mundësish...",
-  "Duke kompiluar buzëqeshje...",
+  "Duke kontrolluar lejet per dite e lindjes...",
+  "Duke lidhur me API te gjerave te mira...",
+  "Duke ngarkuar nje vit te ri me shpresa...",
+  "Duke kompiluar buzqeshje...",
 ];
 
 const confettiColors = ["#f9d976", "#ff8fab", "#90cdf4", "#a78bfa", "#86efac", "#fca5a5"];
@@ -110,14 +110,14 @@ export default function App() {
       <AnimatePresence mode="wait">
         {!started ? (
           <motion.section key="intro" className="hero" id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, y: -20 }}>
-            <div className="eyebrow"><Sparkles size={13} /> DIÇKA E VEÇANTË PËR JU</div>
+            <div className="eyebrow"><Sparkles size={13} /> DIÇKA E VEÇANTE PER TY</div>
             <div className="hero-orbit">
               <div className="orbit orbit-a" /><div className="orbit orbit-b" />
               <div className="orbit-core"><Cake size={43} strokeWidth={1.25} /></div>
               <span className="orbit-star star-a">✦</span><span className="orbit-star star-b">✧</span>
             </div>
             <h1>Hej, Vesa<span className="purple-period">.</span></h1>
-            <p className="hero-subtitle">Ke një njoftim të ri.</p>
+            <p className="hero-subtitle">Ke nje lajm te ri.</p>
             <div className="terminal-card">
               <div className="terminal-head">
                 <div className="window-dots"><i /><i /><i /></div>
@@ -126,15 +126,15 @@ export default function App() {
               </div>
               <div className="terminal-body">
                 <p><span className="prompt">→</span> Duke inicializuar <b>vesa.exe</b>...</p>
-                <p><span className="prompt">→</span> U zbulua protokolli i ditëlindjes.</p>
-                <p><span className="prompt">→</span> Duke përgatitur diçka të bukur<span className="cursor">_</span></p>
+                <p><span className="prompt">→</span> U zbulua protokolli i dates.</p>
+                <p><span className="prompt">→</span> Duke gati nje surprize te bukur<span className="cursor">_</span></p>
               </div>
             </div>
             <button className="primary-button" onClick={launch}>
-              Hap surprizën <ArrowRight size={17} />
+              Hap surprizen <ArrowRight size={17} />
             </button>
-            <p className="microcopy">Asnjë bug nuk u lëndua në prodhimin e kësaj ditëlindjeje.</p>
-            <div className="scroll-hint"><ArrowDown size={14} /> ROLLO A KËTU, QËNDRO DISA</div>
+            <p className="microcopy">Asnje bug nuk u lende ne prodhimin e kesaj dite.</p>
+            <div className="scroll-hint"><ArrowDown size={14} /> ROLLO NDERA, QENDRO DISA</div>
           </motion.section>
         ) : (
           <motion.section key="content" className="content" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }}>
@@ -150,30 +150,30 @@ export default function App() {
               <>
                 <section className="birthday-heading">
                   <div className="eyebrow"><PartyPopper size={14} /> LANSIMI U KRYE ME SUKSES</div>
-                  <h1>Gëzuar Ditëlindjen,<br /><em>Vesa!</em></h1>
-                  <p className="heading-note">Një tjetër udhëtim rreth diellit. Një version tjetër i vlefshëm për t'u festuar.</p>
-                  <div className="success-pill"><span /> HTTP 200 · TË GJITHA SISTEMET TË GËZUARA</div>
+                  <h1>Gëzuar ditelindjen,<br /><em>Vesa!</em></h1>
+                  <p className="heading-note">Një udhetim i ri rreth diellit. Një version i ri dhe i bukur per te festuar.</p>
+                  <div className="success-pill"><span /> HTTP 200 · TE GJITHA SISTEMET ME GJEK</div>
                 </section>
 
                 <section className="message-card">
                   <div className="message-icon"><Heart size={18} /></div>
-                  <p className="section-kicker">NJË SHËNIM NGA ZHVILLUESI</p>
-                  <h2>Disa njerëz e bëjnë udhëtimin më të mirë.</h2>
+                  <p className="section-kicker">NJË SHËNIM NGA KRIKIMI</p>
+                  <h2>Disa persona e bejne rrugen me te mire.</h2>
                   <p className="message-copy">
-                    Jam shumë i lumtur që rrugët tona u kryqëzuan. Nga ditët e ndarjes së zyrës deri te momentet e vogla dhe buzëqeshjet përgjatë rrugës, jam falënderues për kujtimet që kemi ndërtuar. Edhe pse jeta na çoi në vende të ndryshme, shpresoj që Vienna të të trajtojë mirë dhe të të sjellë aventura të reja dhe të bukura.
+                    Jam shume i lumtur qe rrugët tona u kryqezuan. Nga ditët e punes dhe momentet e vogla te buzqeshjes, me ka qene e bukur te ndjekim keshtu. Edhe pse jeta na ka dhene rrugë te ndryshme, shpresoj qe Vienna te te ndjehet e mira dhe te te sjelle aventura te reja.
                   </p>
                   <p className="message-copy">
-                    Ju dërgoj një vit të plotë me njerëz të mirë, mundësi të mahnitshme, plane spontane dhe lumturi të tillë që nuk ka nevojë të depërtojë në debug. Mbaji veten si je. Ti meriton gjëra të mira.
+                    Të uroj nje vit te plotë me persona te mirë, mundesi te bukura, plane spontane dhe lumturi te cila nuk ka nevojë per debug. Qendro si je. Ti meriton cdo gje te mirë.
                   </p>
-                  <div className="signature">Gëzu ditëlindjen më të bukur <span>♡</span></div>
+                  <div className="signature">Me fat te madh <span>♡</span></div>
                 </section>
 
                 <section className="memories-section">
                   <div className="section-heading">
-                    <div><p className="section-kicker">BAZA E KUJTIMEVE</p><h2>Disa fotografi të bukura.</h2></div>
+                    <div><p className="section-kicker">BAZA E MOMENTEVE</p><h2>Disa foto te mira.</h2></div>
                     <span className="memory-count">03 OBJEKTE</span>
                   </div>
-                  <p className="section-description">Një galeri e vogël për momente që vlen të ruash. Shto fotot e tua të preferuara për ta bërë akoma më tënd.</p>
+                  <p className="section-description">Një koleksion i vogel me momente qe vlen te mbahen mend. Shto fotot e preferuara dhe beje edhe me te personal.</p>
                   <div className="photo-grid">
                     {galleryPhotos.map((photo, index) => <PhotoCard key={photo.src} photo={photo} index={index} onOpen={() => setActivePhoto(index)} />)}
                   </div>
@@ -184,19 +184,19 @@ export default function App() {
                     <img src={closingPhoto.src} alt={closingPhoto.caption} />
                   </div>
                   <div className="closing-photo-copy">
-                    <p className="section-kicker">PËR TË KËNDUAR</p>
-                    <h2>Një kujtim i parë, që do të mbetet gjithmonë.</h2>
-                    <p>Edhe një herë, një fotografi e parë që e mban në mendje tërë atë çfarë shoqëron këtë ditë dhe këtë moment të veçantë.</p>
+                    <p className="section-kicker">PER TE MBETUR</p>
+                    <h2>Një moment i pare, qe do te mbetet gjithmonë.</h2>
+                    <p>Edhe nje here, nje foto e pare qe e mban ne mend cdo moment te ketij dite te vecante.</p>
                   </div>
                 </section>
 
                 <section className="wish-section">
                   <div className="wish-glow"><Sparkles size={22} /></div>
                   <p className="section-kicker">GJËJA E FUNDIT</p>
-                  <h2>Bëj një ëndërr, <em>Vesa.</em></h2>
-                  <p>Le të jetë viti i ardhshëm i butë me ty. Le të jenë ditët e mira më të shumta se ato të këqija dhe le të sjellë çdo kapitull i ri diçka që vlen të qeshë.</p>
+                  <h2>Bej nje enderr, <em>Vesa.</em></h2>
+                  <p>Le te jete viti i ardhshëm i bute me ty. Le te jene ditet e mira me te shumta se ato te keqija dhe le te sjelle cdo kapitull i ri diçka qe vlen te qeshesh.</p>
                   <button className={`primary-button wish-button ${wishMade ? "is-done" : ""}`} onClick={triggerWish}>
-                    {wishMade ? <>Ëndrra u ruajt me sukses <Check size={17} /></> : <>Bëra një ëndërr <Sparkles size={17} /></>}
+                    {wishMade ? <>Endrra u ruajt me sukses <Check size={17} /></> : <>Bera nje enderr <Sparkles size={17} /></>}
                   </button>
 
                   {wishMade && (
@@ -206,9 +206,9 @@ export default function App() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h3>Shumë fat, Vesa! ✨</h3>
+                      <h3>Shume fat, Vesa! ✨</h3>
                       <p>
-                        Uroj që jeta të japë një vit të plotë me dashuri, shëndet, sukses, gëzim të paparë dhe ëndërrat më të bukura që t'i dëshironit. Ti meriton çdo diell, çdo buzëqeshje dhe çdo moment të lumtur që vjen. Gëzuar ditëlindjen dhe vazhdo të shkëlqesh!
+                        Uroj qe jeta te japë nje vit te plotë me dashuri, shendet, sukses, gëzim te papare dhe enderrat me te bukura qe ti i deshiron. Ti meriton cdo diell, cdo buzqeshje dhe cdo moment te lumtur qe vjen. Gëzuar ditelindjen dhe vazhdo te shkëlqesh!
                       </p>
                     </motion.div>
                   )}
@@ -238,8 +238,8 @@ export default function App() {
                 <footer className="footer">
                   <div className="footer-rule" />
                   <div className="footer-brand"><Code2 size={15} /> vesa.exe</div>
-                  <p>E ndërtuar me pak kod dhe shumë mirëdashje.</p>
-                  <span className="footer-status"><span /> LIRUAR ME KËRKIM · 2026</span>
+                  <p>E ndërtuar me pak kod dhe shume dashuri.</p>
+                  <span className="footer-status"><span /> LIRUAR ME KERKIM · 2026</span>
                 </footer>
               </>
             )}
